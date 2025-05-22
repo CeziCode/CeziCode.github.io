@@ -29,6 +29,72 @@
       -webkit-text-fill-color: transparent;
     }
 
+    /* Hamburger Menu */
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1001;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+    }
+
+    /* Sidebar Menu */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #0f0f0f;
+      padding-top: 4rem;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.8);
+      border-right: 1px solid #222;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      padding: 1rem 2rem;
+    }
+
+    .sidebar ul li a {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: block;
+      background: linear-gradient(to right, #9b5de5, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .sidebar ul li a:hover {
+      transform: scale(1.05);
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+    }
+
     .hero {
       background-image: url('https://images.unsplash.com/photo-1614281099690-250c861c93b7?auto=format&fit=crop&w=1470&q=80');
       background-size: cover;
@@ -192,6 +258,24 @@
     <h1>ELISSIER</h1>
   </header>
 
+  <!-- Hamburger Menu Button -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Sidebar Menu -->
+  <nav id="sidebarMenu" class="sidebar">
+    <ul>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Mens</a></li>
+      <li><a href="#">Womens</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+  </nav>
+
   <section class="hero">
     <h2>NEW DROP | SUMMER '25 COLLECTION</h2>
   </section>
@@ -235,11 +319,11 @@
   </div>
 
   <script>
-    // Auto-open the modal after a short delay on page load
+    // Modal functionality
     window.onload = function () {
       setTimeout(() => {
         document.getElementById("subscribeModal").style.display = "flex";
-      }, 1000); // 1-second delay
+      }, 1000);
     };
 
     function openModal() {
@@ -256,11 +340,21 @@
       setTimeout(closeModal, 2000);
     }
 
-    // Close modal when clicking outside it
+    // Sidebar toggle
+    function toggleMenu() {
+      const menu = document.getElementById('sidebarMenu');
+      menu.classList.toggle('active');
+    }
+
+    // Close modal or menu when clicking outside
     window.onclick = function(event) {
       const modal = document.getElementById("subscribeModal");
+      const menu = document.getElementById("sidebarMenu");
       if (event.target === modal) {
         closeModal();
+      }
+      if (!menu.contains(event.target) && !document.querySelector('.hamburger').contains(event.target)) {
+        menu.classList.remove('active');
       }
     };
   </script>
