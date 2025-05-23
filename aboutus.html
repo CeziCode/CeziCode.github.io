@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elissier – About Us</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0f0f0f;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #111;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+      background: linear-gradient(to right, #9b5de5, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1001;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #0f0f0f;
+      padding-top: 4rem;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.8);
+      border-right: 1px solid #222;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      padding: 1rem 2rem;
+    }
+
+    .sidebar ul li a {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: block;
+      background: linear-gradient(to right, #9b5de5, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .sidebar ul li a:hover {
+      transform: scale(1.05);
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 4rem auto 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    main h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #9b5de5, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+
+    main p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ELISSIER</h1>
+  </header>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav id="sidebarMenu" class="sidebar">
+    <ul>
+      <li><a href="https://cezicode.github.io/">Home</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Mens</a></li>
+      <li><a href="#">Womens</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>About Us</h2>
+    <p>
+      Welcome to Elissier — your go-to destination for premium urban apparel that defines street style and authenticity. We are passionate about creating high-quality clothing that speaks to your individuality and love for the city life.
+    </p>
+    <p>
+      Founded in 2020, Elissier combines modern designs with sustainable materials, ensuring that each piece not only looks great but is responsibly made. Our collections are crafted with attention to detail, blending comfort and durability for everyday wear.
+    </p>
+    <p>
+      At Elissier, we believe fashion is more than just clothing; it's a lifestyle and a statement. Our mission is to empower you to express yourself boldly through our exclusive drops, carefully curated to keep you ahead of the trends.
+    </p>
+    <p>
+      Join our community of urban explorers and fashion enthusiasts, and stay tuned for exciting new releases, collaborations, and stories from the heart of the streets.
+    </p>
+  </main>
+
+  <footer>
+    &copy; 2025 Elissier. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('sidebarMenu');
+      menu.classList.toggle('active');
+    }
+
+    // Close sidebar when clicking outside
+    window.onclick = function(event) {
+      const menu = document.getElementById("sidebarMenu");
+      if (!menu.contains(event.target) && !document.querySelector('.hamburger').contains(event.target)) {
+        menu.classList.remove('active');
+      }
+    };
+  </script>
+
+</body>
+</html>
