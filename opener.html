@@ -8,41 +8,64 @@
     body {
       margin: 0;
       padding: 0;
-      background: url('websitetease.png') no-repeat center center fixed;
+      background: url('websitetease (2).png') no-repeat center center fixed;
       background-size: cover;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
+      font-family: 'Arial', sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      color: #fff;
     }
+
     .logo {
       width: 300px;
       max-width: 80%;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
+
     .signup-box {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #fbb;
+      padding: 12px 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
     }
+
     input[type="email"] {
-      padding: 10px;
-      width: 250px;
+      background: transparent;
       border: none;
-      border-radius: 5px;
-      margin-bottom: 10px;
+      border-bottom: 2px solid #fbb;
+      color: #fff;
+      font-size: 1.2rem;
+      outline: none;
+      padding: 5px 10px;
+      width: 300px;
+      margin-right: 10px;
     }
+
+    ::placeholder {
+      color: #ddd;
+    }
+
     button {
-      padding: 10px 20px;
-      border: none;
+      background-color: transparent;
+      color: #fbb;
+      border: 1px solid #fbb;
+      padding: 8px 16px;
+      font-size: 1rem;
       border-radius: 5px;
-      background-color: #00ffff;
       cursor: pointer;
-      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #fbb;
+      color: #000;
     }
   </style>
 </head>
@@ -50,8 +73,8 @@
   <img src="coolpromo2 (7).png" alt="Logo" class="logo">
   <div class="signup-box">
     <form action="signup.php" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required><br>
-      <button type="submit">Sign Up</button>
+      <input type="email" name="email" placeholder="exampleemail@elissier.co.uk" required>
+      <button type="submit">→</button>
     </form>
   </div>
 </body>
