@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Optionally redirect back to the homepage or show a success message
-    header("Location: index.html");
+    header("Location: opener.html");
     exit();
 }
 ?>
