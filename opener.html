@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Sign-Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('websitetease.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .logo {
+      width: 300px;
+      max-width: 80%;
+      margin-bottom: 20px;
+    }
+    .signup-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00ffff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <img src="coolpromo2 (7).png" alt="Logo" class="logo">
+  <div class="signup-box">
+    <form action="signup.php" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required><br>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</body>
+</html>
