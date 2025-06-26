@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaser Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #000;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 15px,
+        rgba(255, 255, 255, 0.05) 15px,
+        rgba(255, 255, 255, 0.05) 30px
+      );
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .background-text {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.07);
+      font-size: 2rem;
+      white-space: nowrap;
+      line-height: 2rem;
+      text-shadow: 0 0 4px #fff;
+      z-index: 0;
+    }
+
+    .background-text::after {
+      content: 'XX/XX/25 '.repeat(100);
+    }
+
+    .logo {
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo img {
+      max-width: 300px;
+      filter: drop-shadow(0 0 8px #fff);
+    }
+
+    .email {
+      position: relative;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #f5b3c8;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 2;
+      backdrop-filter: blur(5px);
+    }
+
+    .highlight {
+      color: #f5b3c8;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-text"></div>
+  <div class="logo">
+    <img src="websitetease (2).png" alt="Logo">
+  </div>
+  <div class="email">
+    <span class="highlight">exampleemail</span>@elissier.co.uk
+  </div>
+</body>
+</html>
